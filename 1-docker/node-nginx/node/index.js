@@ -21,7 +21,7 @@ connection.connect(async function(err) {
         if (err) throw err;
 
         const peoplesHTML = result.map((people) => {
-            return `<tr><td>${people.name}</td></tr></br>`;
+            return `<tr><td>${people.name}</td></tr>`;
         });
         
         app.get('/', (req, res) => {

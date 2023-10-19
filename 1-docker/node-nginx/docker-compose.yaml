@@ -6,10 +6,11 @@ services:
       context: nginx/
     container_name: nginx
     restart: unless-stopped
+    tty: true
     networks: 
       - node-network
     ports: 
-      - "8080:80"
+      - "80:80"
     depends_on:
       - app
 
@@ -22,7 +23,7 @@ services:
     volumes: 
       - ./node:/usr/src/app
     networks: 
-      - node-network
+      - node-network 
     depends_on: 
        - db
 
